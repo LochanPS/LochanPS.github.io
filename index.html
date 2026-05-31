@@ -3,56 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lochan P S</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
-body{
+
+*{
     margin:0;
     padding:0;
-    background:#f5f5f5;
-    font-family:Arial, sans-serif;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#000;
+    color:white;
+    min-height:100vh;
 }
 
 .container{
-    max-width:500px;
-    margin:50px auto;
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    max-width:650px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.profile{
     text-align:center;
 }
 
+.profile img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #222;
+    margin-bottom:20px;
+}
+
 h1{
-    margin-bottom:5px;
+    font-size:2.3rem;
+    font-weight:700;
 }
 
 .subtitle{
-    color:gray;
-    margin-bottom:25px;
+    color:#a1a1aa;
+    margin-top:10px;
+    line-height:1.6;
 }
 
-.button{
-    display:block;
-    text-decoration:none;
-    background:black;
+.tagline{
+    margin-top:20px;
+    color:#d4d4d8;
+    font-size:1rem;
+}
+
+.card{
+    background:#111;
+    border:1px solid #1f1f1f;
+    border-radius:24px;
+    padding:24px;
+    margin-top:30px;
+}
+
+.section-title{
+    font-size:1.1rem;
+    margin-bottom:18px;
     color:white;
-    padding:14px;
-    margin:12px 0;
-    border-radius:12px;
-    font-size:16px;
-    transition:0.2s;
+    font-weight:600;
 }
 
-.button:hover{
-    transform:scale(1.02);
+.link-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.link{
+    text-decoration:none;
+    color:white;
+    background:#18181b;
+    padding:18px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:0.25s;
+}
+
+.link:hover{
+    background:#242424;
+    transform:translateY(-2px);
+}
+
+.link i{
+    font-size:1.2rem;
+}
+
+.feature{
+    background:#18181b;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:12px;
+}
+
+.feature a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.feature p{
+    color:#a1a1aa;
+    margin-top:6px;
+    font-size:0.95rem;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.stat{
+    background:#18181b;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+}
+
+.stat h3{
+    font-size:1.5rem;
+    margin-bottom:6px;
+}
+
+.stat p{
+    color:#a1a1aa;
+    font-size:0.9rem;
+}
+
+.quote{
+    text-align:center;
+    color:#d4d4d8;
+    line-height:1.8;
+    font-size:1rem;
 }
 
 .footer{
-    margin-top:20px;
-    color:gray;
-    font-size:14px;
+    text-align:center;
+    margin-top:40px;
+    color:#71717a;
+    font-size:0.9rem;
 }
+
+@media(max-width:600px){
+
+.link-grid{
+    grid-template-columns:1fr;
+}
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+}
+
 </style>
 </head>
 
@@ -60,36 +182,178 @@ h1{
 
 <div class="container">
 
-<h1>Lochan P S</h1>
-<p class="subtitle">Engineering Student • Builder • Creator</p>
+    <div class="profile">
 
-<a class="button" href="tel:+919742628582">
-📞 Call Me
-</a>
+        <img src="profile.jpg" alt="Lochan">
 
-<a class="button" href="mailto:pokkalilochan@gmail.com">
-✉️ Email Me
-</a>
+        <h1>Lochan P S</h1>
 
-<a class="button" href="https://www.linkedin.com/in/lochan-pokkali-458866268/" target="_blank">
-💼 LinkedIn
-</a>
+        <div class="subtitle">
+            IBM Qiskit Advocate<br>
+            Founder @ Quantum Collective
+        </div>
 
-<a class="button" href="https://github.com/LochanPS" target="_blank">
-💻 GitHub
-</a>
+        <div class="tagline">
+            Quantum Computing • AI Systems • Blockchain
+        </div>
 
-<a class="button" href="https://www.youtube.com/@QuantumWithLochan" target="_blank">
-⚛️ Quantum With Lochan
-</a>
+    </div>
 
-<a class="button" href="https://www.youtube.com/@Lochanpokkali" target="_blank">
-🎥 Personal YouTube
-</a>
+    <!-- CONTACTS -->
 
-<div class="footer">
-Scan • Connect • Collaborate
-</div>
+    <div class="card">
+
+        <div class="section-title">
+            Connect
+        </div>
+
+        <div class="link-grid">
+
+            <a class="link"
+               href="https://www.linkedin.com/in/lochan-pokkali-458866268/"
+               target="_blank">
+
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+
+            </a>
+
+            <a class="link"
+               href="https://github.com/LochanPS"
+               target="_blank">
+
+                <i class="fab fa-github"></i>
+                GitHub
+
+            </a>
+
+            <a class="link"
+               href="mailto:pokkalilochan@gmail.com">
+
+                <i class="fas fa-envelope"></i>
+                Email
+
+            </a>
+
+            <a class="link"
+               href="tel:+919742628582">
+
+                <i class="fas fa-phone"></i>
+                Phone
+
+            </a>
+
+            <a class="link"
+               href="resume.pdf"
+               target="_blank">
+
+                <i class="fas fa-file-pdf"></i>
+                Resume
+
+            </a>
+
+            <a class="link"
+               href="https://wa.me/919742628582"
+               target="_blank">
+
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FEATURED -->
+
+    <div class="card">
+
+        <div class="section-title">
+            Featured
+        </div>
+
+        <div class="feature">
+
+            <a href="https://www.youtube.com/@QuantumWithLochan"
+               target="_blank">
+
+               Quantum With Lochan
+
+            </a>
+
+            <p>
+                Teaching Quantum Computing from first principles.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <a href="https://www.youtube.com/@Lochanpokkali"
+               target="_blank">
+
+               Personal YouTube
+
+            </a>
+
+            <p>
+                Projects, ideas, experiments and tech content.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="card">
+
+        <div class="section-title">
+            Highlights
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>IBM</h3>
+                <p>Qiskit Advocate</p>
+            </div>
+
+            <div class="stat">
+                <h3>200+</h3>
+                <p>Quantum Community Members</p>
+            </div>
+
+            <div class="stat">
+                <h3>2</h3>
+                <p>ML Internships</p>
+            </div>
+
+            <div class="stat">
+                <h3>🏆</h3>
+                <p>Hackathon Winner</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- QUOTE -->
+
+    <div class="card">
+
+        <div class="quote">
+            Building the future at the intersection of
+            Quantum Computing, Artificial Intelligence
+            and Decentralized Systems.
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 Lochan P S
+    </div>
 
 </div>
 
