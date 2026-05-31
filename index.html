@@ -3,359 +3,606 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Lochan P S</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: white;
+  min-height: 100vh;
 }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#000;
-    color:white;
-    min-height:100vh;
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-.container{
-    max-width:650px;
-    margin:auto;
-    padding:40px 20px;
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.profile{
-    text-align:center;
+.profile { text-align: center; }
+
+.profile img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #222;
+  margin-bottom: 20px;
 }
 
-.profile img{
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #222;
-    margin-bottom:20px;
+h1 { font-size: 2.3rem; font-weight: 700; }
+
+.subtitle {
+  color: #a1a1aa;
+  margin-top: 10px;
+  line-height: 1.6;
 }
 
-h1{
-    font-size:2.3rem;
-    font-weight:700;
+.tagline {
+  margin-top: 20px;
+  color: #d4d4d8;
+  font-size: 1rem;
 }
 
-.subtitle{
-    color:#a1a1aa;
-    margin-top:10px;
-    line-height:1.6;
+.card {
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 30px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.2s ease;
 }
 
-.tagline{
-    margin-top:20px;
-    color:#d4d4d8;
-    font-size:1rem;
+.card:hover {
+  box-shadow: 0 8px 40px rgba(255,255,255,0.04);
 }
 
-.card{
-    background:#111;
-    border:1px solid #1f1f1f;
-    border-radius:24px;
-    padding:24px;
-    margin-top:30px;
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 18px;
 }
 
-.section-title{
-    font-size:1.1rem;
-    margin-bottom:18px;
-    color:white;
-    font-weight:600;
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.link-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+.link {
+  text-decoration: none;
+  color: white;
+  background: #18181b;
+  padding: 16px 18px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s, transform 0.2s;
+  font-size: 0.95rem;
 }
 
-.link{
-    text-decoration:none;
-    color:white;
-    background:#18181b;
-    padding:18px;
-    border-radius:16px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    transition:0.25s;
+.link:hover {
+  background: #242424;
+  transform: translateY(-2px);
 }
 
-.link:hover{
-    background:#242424;
-    transform:translateY(-2px);
+.link i { font-size: 1.15rem; width: 20px; text-align: center; }
+
+.exp-item {
+  background: #18181b;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+.exp-item:last-child { margin-bottom: 0; }
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
-.link i{
-    font-size:1.2rem;
+.exp-role { font-weight: 600; font-size: 0.95rem; }
+.exp-company { color: #71717a; font-size: 0.88rem; margin-top: 2px; }
+.exp-date { color: #52525b; font-size: 0.82rem; white-space: nowrap; padding-top: 2px; }
+
+.exp-bullets {
+  margin-top: 10px;
+  padding-left: 16px;
+  color: #a1a1aa;
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 
-.feature{
-    background:#18181b;
-    border-radius:18px;
-    padding:18px;
-    margin-bottom:12px;
+.project-item {
+  background: #18181b;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+.project-item:last-child { margin-bottom: 0; }
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.feature a{
-    color:white;
-    text-decoration:none;
-    font-weight:600;
+.project-name { font-weight: 600; font-size: 0.97rem; }
+
+.project-badge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #1c1c1c;
+  color: #9ca3af;
+  border: 1px solid #2a2a2a;
+  white-space: nowrap;
 }
 
-.feature p{
-    color:#a1a1aa;
-    margin-top:6px;
-    font-size:0.95rem;
+.project-desc {
+  color: #a1a1aa;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-top: 8px;
 }
 
-.stats{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+.project-mono {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #6b7280;
+  background: #0d0d0d;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  line-height: 1.7;
 }
 
-.stat{
-    background:#18181b;
-    padding:20px;
-    border-radius:16px;
-    text-align:center;
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
 }
 
-.stat h3{
-    font-size:1.5rem;
-    margin-bottom:6px;
+.tag {
+  background: #1c1c1c;
+  color: #71717a;
+  font-size: 0.76rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #2a2a2a;
 }
 
-.stat p{
-    color:#a1a1aa;
-    font-size:0.9rem;
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  color: #52525b;
+  text-decoration: none;
+  font-size: 0.83rem;
+  transition: color 0.2s;
+}
+.project-link:hover { color: #a1a1aa; }
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #18181b;
+  border-radius: 18px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+}
+.achievement-item:last-child { margin-bottom: 0; }
+
+.ach-icon { font-size: 1.3rem; flex-shrink: 0; padding-top: 1px; }
+.ach-text { font-size: 0.9rem; color: #a1a1aa; line-height: 1.55; }
+.ach-text strong { color: #e4e4e7; font-weight: 600; }
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.quote{
-    text-align:center;
-    color:#d4d4d8;
-    line-height:1.8;
-    font-size:1rem;
+.stat {
+  background: #18181b;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
 }
 
-.footer{
-    text-align:center;
-    margin-top:40px;
-    color:#71717a;
-    font-size:0.9rem;
+.stat h3 { font-size: 1.5rem; margin-bottom: 6px; }
+.stat p { color: #a1a1aa; font-size: 0.88rem; }
+
+.feature {
+  background: #18181b;
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+}
+.feature:last-child { margin-bottom: 0; }
+
+.feature a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.feature a:hover { color: #a1a1aa; }
+
+.feature p {
+  color: #71717a;
+  margin-top: 5px;
+  font-size: 0.88rem;
 }
 
-@media(max-width:600px){
-
-.link-grid{
-    grid-template-columns:1fr;
+.quote {
+  text-align: center;
+  color: #a1a1aa;
+  line-height: 1.8;
+  font-size: 0.97rem;
 }
 
-.stats{
-    grid-template-columns:1fr;
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #3f3f46;
+  font-size: 0.88rem;
 }
 
+@media (max-width: 600px) {
+  .link-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
 }
-
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-    <div class="profile">
+  <!-- PROFILE -->
+  <div class="profile reveal">
+    <img src="profile.jpg" alt="Lochan P S">
+    <h1>Lochan P S</h1>
+    <div class="subtitle">
+      IBM Qiskit Advocate · Founder @ Quantum Collective
+    </div>
+    <div class="tagline">
+      Quantum Computing &nbsp;·&nbsp; AI Systems &nbsp;·&nbsp; Blockchain
+    </div>
+  </div>
 
-        <img src="profile.jpg" alt="Lochan">
+  <!-- CONNECT -->
+  <div class="card reveal">
+    <div class="section-title">Connect</div>
+    <div class="link-grid">
+      <a class="link" href="https://www.linkedin.com/in/lochan-pokkali-458866268/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a class="link" href="https://github.com/LochanPS" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a class="link" href="mailto:pokkalilochan@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a class="link" href="https://wa.me/919742628582" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a class="link" href="https://www.youtube.com/@QuantumWithLochan" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a class="link" href="https://www.kaggle.com/lochanpokkali" target="_blank">
+        <i class="fab fa-kaggle"></i> Kaggle
+      </a>
+      <a class="link" href="tel:+919742628582">
+        <i class="fas fa-phone"></i> Phone
+      </a>
+      <a class="link" href="resume.pdf" target="_blank">
+        <i class="fas fa-file-pdf"></i> Resume
+      </a>
+    </div>
+  </div>
 
-        <h1>Lochan P S</h1>
+  <!-- EXPERIENCE -->
+  <div class="card reveal">
+    <div class="section-title">Experience</div>
 
-        <div class="subtitle">
-            IBM Qiskit Advocate<br>
-            Founder @ Quantum Collective
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">ML Intern</div>
+          <div class="exp-company">QOVA Labs</div>
         </div>
-
-        <div class="tagline">
-            Quantum Computing • AI Systems • Blockchain
-        </div>
-
+        <div class="exp-date">Feb 2026 – Apr 2026</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Built conversational AI system inspired by Claude-like interaction paradigms</li>
+        <li>Designed evaluation pipelines and benchmarks to improve response quality</li>
+        <li>Iterative refinement loops to enhance model reasoning and usability</li>
+      </ul>
     </div>
 
-    <!-- CONTACTS -->
-
-    <div class="card">
-
-        <div class="section-title">
-            Connect
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">ML Intern</div>
+          <div class="exp-company">ALPHAI</div>
         </div>
-
-        <div class="link-grid">
-
-            <a class="link"
-               href="https://www.linkedin.com/in/lochan-pokkali-458866268/"
-               target="_blank">
-
-                <i class="fab fa-linkedin"></i>
-                LinkedIn
-
-            </a>
-
-            <a class="link"
-               href="https://github.com/LochanPS"
-               target="_blank">
-
-                <i class="fab fa-github"></i>
-                GitHub
-
-            </a>
-
-            <a class="link"
-               href="mailto:pokkalilochan@gmail.com">
-
-                <i class="fas fa-envelope"></i>
-                Email
-
-            </a>
-
-            <a class="link"
-               href="tel:+919742628582">
-
-                <i class="fas fa-phone"></i>
-                Phone
-
-            </a>
-
-            <a class="link"
-               href="resume.pdf"
-               target="_blank">
-
-                <i class="fas fa-file-pdf"></i>
-                Resume
-
-            </a>
-
-            <a class="link"
-               href="https://wa.me/919742628582"
-               target="_blank">
-
-                <i class="fab fa-whatsapp"></i>
-                WhatsApp
-
-            </a>
-
-        </div>
-
+        <div class="exp-date">Oct 2025 – Nov 2025</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Trained models for stock movement prediction using entropy-based modeling</li>
+        <li>Improved prediction robustness across varying market conditions</li>
+      </ul>
     </div>
 
-    <!-- FEATURED -->
-
-    <div class="card">
-
-        <div class="section-title">
-            Featured
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Founder</div>
+          <div class="exp-company">Quantum Collective</div>
         </div>
+        <div class="exp-date">2026 – Present</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Built quantum community of 600+ members — students, researchers, developers</li>
+        <li>Open environment for collaboration across all levels of quantum computing</li>
+      </ul>
+    </div>
+  </div>
 
-        <div class="feature">
+  <!-- PROJECTS -->
+  <div class="card reveal">
+    <div class="section-title">Projects</div>
 
-            <a href="https://www.youtube.com/@QuantumWithLochan"
-               target="_blank">
-
-               Quantum With Lochan
-
-            </a>
-
-            <p>
-                Teaching Quantum Computing from first principles.
-            </p>
-
-        </div>
-
-        <div class="feature">
-
-            <a href="https://www.youtube.com/@Lochanpokkali"
-               target="_blank">
-
-               Personal YouTube
-
-            </a>
-
-            <p>
-                Projects, ideas, experiments and tech content.
-            </p>
-
-        </div>
-
+    <div class="project-item">
+      <div class="project-header">
+        <div class="project-name">Forex Agent Pay</div>
+        <span class="project-badge">Autonomous · On-chain</span>
+      </div>
+      <div class="project-desc">
+        AI agent that reads a cross-border invoice, validates it, and settles it in USDC — fully autonomously. No human in the loop.
+      </div>
+      <div class="project-mono">
+        PDF drops in → fields extracted → compliance checked → USDC fires → tx_hash confirmed → done.<br>
+        Under 30 seconds. On-chain. Real.
+      </div>
+      <div class="tech-tags">
+        <span class="tag">Python</span>
+        <span class="tag">AI Agent</span>
+        <span class="tag">USDC</span>
+        <span class="tag">Web3</span>
+        <span class="tag">LangGraph</span>
+      </div>
+      <a class="project-link" href="https://github.com/LochanPS/Forex_Exchange_Agent" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
     </div>
 
-    <!-- STATS -->
-
-    <div class="card">
-
-        <div class="section-title">
-            Highlights
-        </div>
-
-        <div class="stats">
-
-            <div class="stat">
-                <h3>IBM</h3>
-                <p>Qiskit Advocate</p>
-            </div>
-
-            <div class="stat">
-                <h3>200+</h3>
-                <p>Quantum Community Members</p>
-            </div>
-
-            <div class="stat">
-                <h3>2</h3>
-                <p>ML Internships</p>
-            </div>
-
-            <div class="stat">
-                <h3>🏆</h3>
-                <p>Hackathon Winner</p>
-            </div>
-
-        </div>
-
+    <div class="project-item">
+      <div class="project-header">
+        <div class="project-name">BB84 QKD Network Simulator</div>
+        <span class="project-badge">🏆 IISc × IBM Winner</span>
+      </div>
+      <div class="project-desc">
+        Complete web-based BB84 protocol with 5 attack scenarios, multi-attacker analysis, and real-time quantum visualizations. QBER threshold detection at 11%.
+      </div>
+      <div class="tech-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Qiskit</span>
+        <span class="tag">Flask</span>
+        <span class="tag">React</span>
+        <span class="tag">NumPy</span>
+      </div>
+      <a class="project-link" href="https://github.com/LochanPS/Quantum-QKD-Simulation" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
     </div>
 
-    <!-- QUOTE -->
-
-    <div class="card">
-
-        <div class="quote">
-            Building the future at the intersection of
-            Quantum Computing, Artificial Intelligence
-            and Decentralized Systems.
-        </div>
-
+    <div class="project-item">
+      <div class="project-header">
+        <div class="project-name">UrbanVision</div>
+        <span class="project-badge">Geospatial AI</span>
+      </div>
+      <div class="project-desc">
+        Interactive geospatial visualization platform that analyzes infrastructure gaps across Bengaluru and delivers AI-powered recommendations for urban planning decisions.
+      </div>
+      <div class="tech-tags">
+        <span class="tag">Python</span>
+        <span class="tag">GIS</span>
+        <span class="tag">AI</span>
+        <span class="tag">React</span>
+        <span class="tag">Maps API</span>
+      </div>
+      <a class="project-link" href="https://github.com/LochanPS/UrbanvisionAI" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
     </div>
 
-    <div class="footer">
-        © 2026 Lochan P S
+    <div class="project-item">
+      <div class="project-header">
+        <div class="project-name">Subscrybe</div>
+        <span class="project-badge">Cardano Finalist</span>
+      </div>
+      <div class="project-desc">
+        Privacy-first subscription management on Cardano L1. Plutus smart contracts for automated payment routing. Full dashboard with analytics, calendar view, and merchant revenue tracking.
+      </div>
+      <div class="tech-tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Plutus</span>
+        <span class="tag">Cardano</span>
+        <span class="tag">Tailwind</span>
+      </div>
+      <a class="project-link" href="https://github.com/LochanPS/Subscrybe" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
     </div>
+
+    <div class="project-item">
+      <div class="project-header">
+        <div class="project-name">LoyalCoins</div>
+        <span class="project-badge">On-chain Loyalty</span>
+      </div>
+      <div class="project-desc">
+        Tokenized loyalty rewards on-chain. Every repeat purchase earns coins — spendable, tradeable, and not locked to a single brand. Loyalty that actually belongs to the customer.
+      </div>
+      <div class="tech-tags">
+        <span class="tag">Blockchain</span>
+        <span class="tag">Smart Contracts</span>
+        <span class="tag">Web3</span>
+        <span class="tag">React</span>
+      </div>
+      <a class="project-link" href="https://github.com/LochanPS/Loyalcoins" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="card reveal">
+    <div class="section-title">Achievements</div>
+
+    <div class="achievement-item">
+      <div class="ach-icon">🏆</div>
+      <div class="ach-text">
+        <strong>Winner — IISc Bengaluru × IBM Qiskit Fall Fest 2024</strong><br>
+        BB84 Quantum Key Distribution Network Simulator with multi-attacker scenario analysis.
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <div class="ach-icon">🥈</div>
+      <div class="ach-text">
+        <strong>Finalist — Cardano Blockchain Hackathon</strong><br>
+        Subscrybe — privacy-first subscription management platform on Cardano.
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <div class="ach-icon">⚛️</div>
+      <div class="ach-text">
+        <strong>IBM Qiskit Advocate 2025</strong><br>
+        Represented global student quantum community. Advocate ID: 116901.
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <div class="ach-icon">🎤</div>
+      <div class="ach-text">
+        <strong>Invited — IBM Quantum Developers Day 2025 & NASSCOM AI Confluence 2025</strong>
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <div class="ach-icon">🇮🇳</div>
+      <div class="ach-text">
+        <strong>Smart India Hackathon 2025 — 2nd Round Qualified</strong><br>
+        AI-based Rockfall Prediction System for Open-Pit Mines.
+      </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <div class="card reveal">
+    <div class="section-title">Highlights</div>
+    <div class="stats">
+      <div class="stat">
+        <h3>IBM</h3>
+        <p>Qiskit Advocate</p>
+      </div>
+      <div class="stat">
+        <h3>600+</h3>
+        <p>Quantum Community Members</p>
+      </div>
+      <div class="stat">
+        <h3>2</h3>
+        <p>ML Internships</p>
+      </div>
+      <div class="stat">
+        <h3>🏆</h3>
+        <p>Hackathon Winner</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="card reveal">
+    <div class="section-title">Featured</div>
+    <div class="feature">
+      <a href="https://www.youtube.com/@QuantumWithLochan" target="_blank">Quantum With Lochan</a>
+      <p>Teaching Quantum Computing from first principles.</p>
+    </div>
+    <div class="feature">
+      <a href="https://www.youtube.com/@Lochanpokkali" target="_blank">Personal YouTube</a>
+      <p>Projects, ideas, experiments and tech content.</p>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="card reveal">
+    <div class="quote">
+      Building the future at the intersection of<br>
+      Quantum Computing, Artificial Intelligence<br>
+      and Decentralized Systems.
+    </div>
+  </div>
+
+  <div class="footer">© 2026 Lochan P S</div>
 
 </div>
 
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const rx = ((e.clientY - r.top  - r.height / 2) / r.height) * -6;
+    const ry = ((e.clientX - r.left - r.width  / 2) / r.width)  *  6;
+    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+  });
+});
+</script>
 </body>
 </html>
