@@ -68,11 +68,6 @@ h1 { font-size: 2.3rem; font-weight: 700; }
   margin-top: 30px;
   transform-style: preserve-3d;
   will-change: transform;
-  transition: box-shadow 0.2s ease;
-}
-
-.card:hover {
-  box-shadow: 0 8px 40px rgba(255,255,255,0.04);
 }
 
 .section-title {
@@ -82,6 +77,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
   margin-bottom: 18px;
 }
 
+/* CONNECT */
 .link-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -108,6 +104,48 @@ h1 { font-size: 2.3rem; font-weight: 700; }
 
 .link i { font-size: 1.15rem; width: 20px; text-align: center; }
 
+/* HIGHLIGHTS */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat {
+  background: #18181b;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.stat h3 { font-size: 1.5rem; margin-bottom: 6px; font-weight: 700; }
+.stat p { color: #a1a1aa; font-size: 0.88rem; }
+
+/* FEATURED */
+.feature {
+  background: #18181b;
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+}
+.feature:last-child { margin-bottom: 0; }
+
+.feature a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.feature a:hover { color: #a1a1aa; }
+
+.feature p {
+  color: #71717a;
+  margin-top: 5px;
+  font-size: 0.88rem;
+}
+
+/* EXPERIENCE */
 .exp-item {
   background: #18181b;
   border-radius: 18px;
@@ -136,6 +174,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
   line-height: 1.65;
 }
 
+/* PROJECTS */
 .project-item {
   background: #18181b;
   border-radius: 18px;
@@ -172,18 +211,6 @@ h1 { font-size: 2.3rem; font-weight: 700; }
   margin-top: 8px;
 }
 
-.project-mono {
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  color: #6b7280;
-  background: #0d0d0d;
-  border: 1px solid #1f1f1f;
-  border-radius: 10px;
-  padding: 10px 14px;
-  margin-top: 10px;
-  line-height: 1.7;
-}
-
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -212,6 +239,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
 }
 .project-link:hover { color: #a1a1aa; }
 
+/* ACHIEVEMENTS */
 .achievement-item {
   display: flex;
   align-items: flex-start;
@@ -223,49 +251,23 @@ h1 { font-size: 2.3rem; font-weight: 700; }
 }
 .achievement-item:last-child { margin-bottom: 0; }
 
-.ach-icon { font-size: 1.3rem; flex-shrink: 0; padding-top: 1px; }
+.ach-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #71717a;
+  font-size: 0.95rem;
+}
+
 .ach-text { font-size: 0.9rem; color: #a1a1aa; line-height: 1.55; }
 .ach-text strong { color: #e4e4e7; font-weight: 600; }
 
-.stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.stat {
-  background: #18181b;
-  padding: 20px;
-  border-radius: 16px;
-  text-align: center;
-}
-
-.stat h3 { font-size: 1.5rem; margin-bottom: 6px; }
-.stat p { color: #a1a1aa; font-size: 0.88rem; }
-
-.feature {
-  background: #18181b;
-  border-radius: 16px;
-  padding: 16px 18px;
-  margin-bottom: 10px;
-}
-.feature:last-child { margin-bottom: 0; }
-
-.feature a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.2s;
-}
-.feature a:hover { color: #a1a1aa; }
-
-.feature p {
-  color: #71717a;
-  margin-top: 5px;
-  font-size: 0.88rem;
-}
-
+/* QUOTE */
 .quote {
   text-align: center;
   color: #a1a1aa;
@@ -333,9 +335,59 @@ h1 { font-size: 2.3rem; font-weight: 700; }
     </div>
   </div>
 
+  <!-- HIGHLIGHTS -->
+  <div class="card reveal">
+    <div class="section-title">Highlights</div>
+    <div class="stats">
+      <div class="stat">
+        <h3>IBM</h3>
+        <p>Qiskit Advocate</p>
+      </div>
+      <div class="stat">
+        <h3>600+</h3>
+        <p>Quantum Collective Members</p>
+      </div>
+      <div class="stat">
+        <h3>2</h3>
+        <p>ML Internships</p>
+      </div>
+      <div class="stat">
+        <h3>6X</h3>
+        <p>Hackathons</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="card reveal">
+    <div class="section-title">Featured</div>
+    <div class="feature">
+      <a href="https://www.youtube.com/@QuantumWithLochan" target="_blank">Quantum With Lochan</a>
+      <p>Teaching Quantum Computing from first principles.</p>
+    </div>
+    <div class="feature">
+      <a href="https://www.youtube.com/@Lochanpokkali" target="_blank">Personal YouTube</a>
+      <p>Projects, ideas, experiments and tech content.</p>
+    </div>
+  </div>
+
   <!-- EXPERIENCE -->
   <div class="card reveal">
     <div class="section-title">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Founder</div>
+          <div class="exp-company">Quantum Collective</div>
+        </div>
+        <div class="exp-date">2026 – Present</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Built quantum community of 600+ members — students, researchers, developers</li>
+        <li>Open environment for collaboration across all levels of quantum computing</li>
+      </ul>
+    </div>
 
     <div class="exp-item">
       <div class="exp-header">
@@ -366,19 +418,6 @@ h1 { font-size: 2.3rem; font-weight: 700; }
       </ul>
     </div>
 
-    <div class="exp-item">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Founder</div>
-          <div class="exp-company">Quantum Collective</div>
-        </div>
-        <div class="exp-date">2026 – Present</div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Built quantum community of 600+ members — students, researchers, developers</li>
-        <li>Open environment for collaboration across all levels of quantum computing</li>
-      </ul>
-    </div>
   </div>
 
   <!-- PROJECTS -->
@@ -391,11 +430,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
         <span class="project-badge">Autonomous · On-chain</span>
       </div>
       <div class="project-desc">
-        AI agent that reads a cross-border invoice, validates it, and settles it in USDC — fully autonomously. No human in the loop.
-      </div>
-      <div class="project-mono">
-        PDF drops in → fields extracted → compliance checked → USDC fires → tx_hash confirmed → done.<br>
-        Under 30 seconds. On-chain. Real.
+        AI agent that reads a cross-border invoice, validates it, and settles in USDC — fully autonomously. PDF drops in, fields extracted, compliance checked, USDC fires, tx_hash confirmed. Under 30 seconds. No human in the loop.
       </div>
       <div class="tech-tags">
         <span class="tag">Python</span>
@@ -412,7 +447,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
     <div class="project-item">
       <div class="project-header">
         <div class="project-name">BB84 QKD Network Simulator</div>
-        <span class="project-badge">🏆 IISc × IBM Winner</span>
+        <span class="project-badge">IISc × IBM Winner</span>
       </div>
       <div class="project-desc">
         Complete web-based BB84 protocol with 5 attack scenarios, multi-attacker analysis, and real-time quantum visualizations. QBER threshold detection at 11%.
@@ -431,11 +466,30 @@ h1 { font-size: 2.3rem; font-weight: 700; }
 
     <div class="project-item">
       <div class="project-header">
+        <div class="project-name">AI That Dreams</div>
+      </div>
+      <div class="project-desc">
+        AI companion with a circadian rhythm — awake, drowsy, dreaming, waking — processing memories through sleep cycles. Real-time emotion detection across 7 states, 3D neural network visualization, and a therapeutic audio system with 30+ tracks.
+      </div>
+      <div class="tech-tags">
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">Three.js</span>
+        <span class="tag">Framer Motion</span>
+      </div>
+      <a class="project-link" href="https://github.com/LochanPS/ATD" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <div class="project-item">
+      <div class="project-header">
         <div class="project-name">UrbanVision</div>
         <span class="project-badge">Geospatial AI</span>
       </div>
       <div class="project-desc">
-        Interactive geospatial visualization platform that analyzes infrastructure gaps across Bengaluru and delivers AI-powered recommendations for urban planning decisions.
+        Interactive geospatial platform analyzing infrastructure gaps across Bengaluru. AI-powered recommendations surface where the city needs roads, utilities, and services most.
       </div>
       <div class="tech-tags">
         <span class="tag">Python</span>
@@ -475,7 +529,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
         <span class="project-badge">On-chain Loyalty</span>
       </div>
       <div class="project-desc">
-        Tokenized loyalty rewards on-chain. Every repeat purchase earns coins — spendable, tradeable, and not locked to a single brand. Loyalty that actually belongs to the customer.
+        Tokenized loyalty rewards that actually belong to the customer. Every repeat purchase earns coins — spendable and tradeable across merchants, not locked inside a single app.
       </div>
       <div class="tech-tags">
         <span class="tag">Blockchain</span>
@@ -495,7 +549,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
     <div class="section-title">Achievements</div>
 
     <div class="achievement-item">
-      <div class="ach-icon">🏆</div>
+      <div class="ach-icon"><i class="fas fa-trophy"></i></div>
       <div class="ach-text">
         <strong>Winner — IISc Bengaluru × IBM Qiskit Fall Fest 2024</strong><br>
         BB84 Quantum Key Distribution Network Simulator with multi-attacker scenario analysis.
@@ -503,7 +557,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
     </div>
 
     <div class="achievement-item">
-      <div class="ach-icon">🥈</div>
+      <div class="ach-icon"><i class="fas fa-medal"></i></div>
       <div class="ach-text">
         <strong>Finalist — Cardano Blockchain Hackathon</strong><br>
         Subscrybe — privacy-first subscription management platform on Cardano.
@@ -511,7 +565,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
     </div>
 
     <div class="achievement-item">
-      <div class="ach-icon">⚛️</div>
+      <div class="ach-icon"><i class="fas fa-atom"></i></div>
       <div class="ach-text">
         <strong>IBM Qiskit Advocate 2025</strong><br>
         Represented global student quantum community. Advocate ID: 116901.
@@ -519,55 +573,20 @@ h1 { font-size: 2.3rem; font-weight: 700; }
     </div>
 
     <div class="achievement-item">
-      <div class="ach-icon">🎤</div>
+      <div class="ach-icon"><i class="fas fa-microphone"></i></div>
       <div class="ach-text">
         <strong>Invited — IBM Quantum Developers Day 2025 & NASSCOM AI Confluence 2025</strong>
       </div>
     </div>
 
     <div class="achievement-item">
-      <div class="ach-icon">🇮🇳</div>
+      <div class="ach-icon"><i class="fas fa-flag"></i></div>
       <div class="ach-text">
         <strong>Smart India Hackathon 2025 — 2nd Round Qualified</strong><br>
         AI-based Rockfall Prediction System for Open-Pit Mines.
       </div>
     </div>
-  </div>
 
-  <!-- HIGHLIGHTS -->
-  <div class="card reveal">
-    <div class="section-title">Highlights</div>
-    <div class="stats">
-      <div class="stat">
-        <h3>IBM</h3>
-        <p>Qiskit Advocate</p>
-      </div>
-      <div class="stat">
-        <h3>600+</h3>
-        <p>Quantum Community Members</p>
-      </div>
-      <div class="stat">
-        <h3>2</h3>
-        <p>ML Internships</p>
-      </div>
-      <div class="stat">
-        <h3>🏆</h3>
-        <p>Hackathon Winner</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- FEATURED -->
-  <div class="card reveal">
-    <div class="section-title">Featured</div>
-    <div class="feature">
-      <a href="https://www.youtube.com/@QuantumWithLochan" target="_blank">Quantum With Lochan</a>
-      <p>Teaching Quantum Computing from first principles.</p>
-    </div>
-    <div class="feature">
-      <a href="https://www.youtube.com/@Lochanpokkali" target="_blank">Personal YouTube</a>
-      <p>Projects, ideas, experiments and tech content.</p>
-    </div>
   </div>
 
   <!-- QUOTE -->
@@ -584,6 +603,7 @@ h1 { font-size: 2.3rem; font-weight: 700; }
 </div>
 
 <script>
+// Scroll reveal
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -592,15 +612,21 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// Card tilt — subtle, smooth in, slow return
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
-    const rx = ((e.clientY - r.top  - r.height / 2) / r.height) * -6;
-    const ry = ((e.clientX - r.left - r.width  / 2) / r.width)  *  6;
-    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    const rx = ((e.clientY - r.top  - r.height / 2) / r.height) * -3;
+    const ry = ((e.clientX - r.left - r.width  / 2) / r.width)  *  3;
+    card.style.transition = 'transform 0.12s ease, box-shadow 0.2s ease';
+    card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    card.style.boxShadow = '0 8px 40px rgba(255,255,255,0.03)';
   });
+
   card.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+    card.style.transition = 'transform 0.6s ease, box-shadow 0.4s ease';
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    card.style.boxShadow = 'none';
   });
 });
 </script>
